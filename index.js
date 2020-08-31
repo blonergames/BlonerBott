@@ -38,6 +38,7 @@ const developers = "587213748759035914"//ايديك
 
 ////////
 
+
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content  === prefix + "help") {
@@ -50,7 +51,7 @@ client.on('message', message => {
   .addField("۩***⦁⦓ فائمه الاوامر   ⦔⦁***۩",' ‎ ')
   .addField("✽- **!help admin  ≤ ≥   『 أوامر الادمن 』**",' ‎ ')
    .addField("✽- **!help general  ≤ ≥  『 أوامر العامه 』**",' ‎ ')
-	 .addField("✽- **!help protection  ≤ ≥  『 أوامر ألحمايه 』**",' ‎ ')
+	 
 
 	 
  .setFooter('|| Bloner Bot ||')
@@ -61,9 +62,9 @@ client.on('message', message => {
 
     }
 });
-   
 
-  client.on('message', message => {
+
+client.on('message', message => {
     if (message.author.bot) return;
      if (message.content  === prefix + "help admin") {
           const embed = new Discord.RichEmbed()
@@ -76,16 +77,17 @@ client.on('message', message => {
  .addField("✽- **!باند ↠  『 لتبنيد شخص من سيرفر 』**",' ‎ ')
  .addField("✽- **!طرد ↠  『 لطرد شخص من السيرفر 』**",' ‎ ')
  .addField("✽- **!مسح ↠  『 مسح الشات 』**",' ‎ ')
- .addField("✽- **!افتح ↠  『 فتح الشات 』**",' ‎ ')
+ .addField("✽- **!فتح ↠  『 فتح الشات 』**",' ‎ ')
  .addField("✽- **!قفل ↠  『 قفل الشات 』**",' ‎ ')
  .addField("✽- **!سحب @الشخص ↠  『 لسحب شخص الى روم صوتي 』**",' ‎ ')	  
  .addField("✽- **!معلومات رتبة ↠  『 يوريك معلومات رتبه محدده 』**",' ‎ ')
  .addField("✽- **!قائمة الباند ↠  『  يوريك كل الي مبندين بسيرفر  』**",' ‎ ')	  
  .addField("✽- **!صنع رتبه ↠  『 يصنع لك رتب  』**",' ‎ ')
- .addField("✽- **!role #user rank ↠  『 بعطي رتبه لشخص معين 』**",' ‎ ')
- .addField("✽- **!role all rank  ↠  『 يعطي رتبه لكل الاشخاص 』**",' ‎ ')
+ .addField("✽- **!خذ @الشخص (اسم الرتبه) ↠  『 بعطي رتبه لشخص معين 』**",' ‎ ')
+ .addField("✽- **!خذ الكل (اسم الرتبه)  ↠  『 يعطي رتبه لكل الاشخاص 』**",' ‎ ')
  .addField("✽- **!اسكت ↠  『 لاعطاء ميوت لشخص 』**",' ‎ ')
  .addField("✽- **!تكلم ↠  『 فك الميوت 』**",' ‎ ') 
+ .addField("✽- **!قول ↠  『 راح يكتب البوت الي قلته 』**",' ‎ ')
  .setFooter('|| Bloner Bot ||')
 
 
@@ -96,8 +98,7 @@ client.on('message', message => {
 });
 
 
-
-   client.on('message', message => {
+client.on('message', message => {
     if (message.author.bot) return;
      if (message.content  === prefix + "help general") {
           const embed = new Discord.RichEmbed()
@@ -115,6 +116,7 @@ client.on('message', message => {
  .addField("✽- **!الاعضاء ↠  『 حاله الاعضاء 』**",' ‎ ')	  
  .addField("✽- **!حسابي ↠  『 معلومات حسابك  』**",' ‎ ')	  
 .addField("✽- **!البوت ↠  『 يوريك معلومات البوت  』**",' ‎ ')
+.addField("✽- **!صورتي ↠  『   يظهرلك صورتك  』**",' ‎ ')
 
  .setFooter('|| Bloner Bot ||')
 
@@ -123,369 +125,79 @@ client.on('message', message => {
    
     }
 });
-
-   client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content  === prefix + "help protection") {
-          const embed = new Discord.RichEmbed()
-  
-
-   .setColor('RANDOM')
-  .setTimestamp()
-
- .addField("۩***⦁⦓  أوامر ألحمايه  ⦔⦁***۩",' ‎ ')
- .addField("✽- **!limitbans ↠  『 عدد الاشخاص الي يتبندون والبوت يبند الشخص 』**",' ‎ ')
- .addField("✽- **!limitkicks ↠  『  عدد الاشخاص  لي ينطرودون بعدها البوت يبند الشخص 』**",' ‎ ')
- .addField("✽- **!limitroleDelete ↠  『 عدد الرتب الي تنحذف بعدها البوت يبند الشخص 』**",' ‎ ')
- .addField("✽- **!limitchannelDelete ↠  『 عدد الرومات الي تنحذف بعدها البوت يبند الشخص 』**",' ‎ ')
- .addField("✽- **!limittime 1000 ↠  『 اكتب ذا الامر بعد متخلص تفعيل الحمايه 』**",' ‎ ')
- .addField("✽- **!antibots on ↠  『 منع دخول البوتات شغال 』**",' ‎ ')	  
- .addField("✽- **!antibots off ↠  『 منع دخول البوتات ايقاف 』**",' ‎ ')	  
- 
-
- .setFooter('|| Bloner Bot ||')
-
-
-   message.channel.send({embed});
-   
-    }
-});
-
-//حمايه AbuAz
-
-let anti = JSON.parse(fs.readFileSync("./antigreff.json", "UTF8"));
-let config = JSON.parse(fs.readFileSync("./config.json", "UTF8"));
-client.on("message", message => {
-    if(!message.channel.guild) return;
-    let user = anti[message.guild.id+message.author.id]
-    let num = message.content.split(" ").slice(1).join(" ");
-    if(!anti[message.guild.id+message.author.id]) anti[message.guild.id+message.author.id] = {
-        actions: 0
-    }
-    if(!config[message.guild.id]) config[message.guild.id] = {
-        banLimit: 3,
-        chaDelLimit: 3,
-        roleDelLimit: 3,
-        kickLimits: 3,
-        roleCrLimits: 3,
-        time: 30
-    }
-if(message.content.startsWith(prefix + "limit")) {
-
- 
-    if(!message.member.hasPermission('MANAGE_GUILD')) return;
-    if(message.content.startsWith(prefix + "limitbans")) {
-        if(!num) return message.channel.send("**→ | Supply a number !");
-        if(isNaN(num)) return message.channel.send("**→ | Supply a number !**");
-        config[message.guild.id].banLimit = num;
-        message.channel.send(`**→ | Changed bans limit to : ${config[message.guild.id].banLimit}.**`)
-    }
-    if(message.content.startsWith(prefix + "limitkicks")) {
-        if(!num) return message.channel.send("**→ | Supply a number !**");
-        if(isNaN(num)) return message.channel.send("**→ | Supply a number !**");
-        message.channel.send(`**→ | Changed kicks limit to : ${config[message.guild.id].kickLimits}.**`)
-    }
-    if(message.content.startsWith(prefix + "limitroleDelete")) {
-        if(!num) return message.channel.send("**→ | Supply a number !**");
-        if(isNaN(num)) return message.channel.send("**→ | Supply a number !**");
-        config[message.guild.id].roleDelLimit = num;
-        message.channel.send(`**→ | Changed Role Deleting limit to : ${config[message.guild.id].roleDelLimit}.**`)
-    }
-    if(message.content.startsWith(prefix + "limitroleCreate")) {
-        if(!num) return message.channel.send("**→ | Supply a number !**");
-        if(isNaN(num)) return message.channel.send("**→ | Supply a number !**");
-        config[message.guild.id].roleCrLimits = num;
-        message.channel.send(`**→ | Changed Role Creation limit to : ${config[message.guild.id].roleCrLimits}.**`)
-    }//Zine , Mohamed Tarek , Kbosh
-    if(message.content.startsWith(prefix + "limitchannelDelete")) {
-        if(!num) return message.channel.send("**→ | Supply a number !**");
-        if(isNaN(num)) return message.channel.send("**→ | Supply a number !**");
-        config[message.guild.id].chaDelLimit = num;
-        message.channel.send(`**→ | Changed Channel Deleting limit to : ${config[message.guild.id].chaDelLimit}.**`)
-    }
-    if(message.content.startsWith(prefix + "limittime")) {
-        if(!num) return message.channel.send("**→ | Supply a number !**");
-        if(isNaN(num)) return message.channel.send("**→ | Supply a number !**");
-        config[message.guild.id].time = num;
-        message.channel.send(`**→ | Changed Times limit to : ${config[message.guild.id].time}.**`)
-    }
-    fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(e) {
-        if(e) throw e;
-    });
-    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
-        if(e) throw e;
-        });
-    }
-});
-client.on("channelDelete", async channel => {
-    const entry1 = await channel.guild.fetchAuditLogs({
-        type: 'CHANNEL_DELETE'
-    }).then(audit => audit.entries.first())
-    console.log(entry1.executor.username)
-    const entry = entry1.executor
-    if (!config[channel.guild.id]) config[channel.guild.id] = {
-        banLimit: 3,
-        chaDelLimit: 3,
-        roleDelLimit: 3,
-        kickLimits: 3,
-        roleCrLimits: 3
-    }
-    if (!anti[channel.guild.id + entry.id]) {
-        anti[channel.guild.id + entry.id] = {
-            actions: 1
-        }
-        setTimeout(() => {
-            anti[channel.guild.id + entry.id].actions = "0"
-        }, config[channel.guild.id].time * 1000)
-    } else {
-        anti[channel.guild.id + entry.id].actions = Math.floor(anti[channel.guild.id + entry.id].actions + 1)
-        console.log("TETS");
-        setTimeout(() => {
-            anti[channel.guild.id + entry.id].actions = "0"
-        }, config[channel.guild.id].time * 1000)
-        if (anti[channel.guild.id + entry.id].actions >= config[channel.guild.id].chaDelLimit) {
-            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**→ | ${entry.username} , Deleted many __Channles__.**`))
-            anti[channel.guild.id + entry.id].actions = "0"
-            fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-                if (e) throw e;
-            });h
-            fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-                if (e) throw e;
-            });
-        }
-    }
-
-    fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-        if (e) throw e;
-    });
-    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-        if (e) throw e;
-    });
-});
-
-client.on("roleDelete", async channel => {
-    const entry1 = await channel.guild.fetchAuditLogs({
-        type: 'ROLE_DELETE'
-    }).then(audit => audit.entries.first())
-    console.log(entry1.executor.username)
-    const entry = entry1.executor
-    if (!config[channel.guild.id]) config[channel.guild.id] = {
-        banLimit: 3,
-        chaDelLimit: 3,
-        roleDelLimit: 3,
-        kickLimits: 3,
-        roleCrLimits: 3
-    }
-    if (!anti[channel.guild.id + entry.id]) {
-        anti[channel.guild.id + entry.id] = {
-            actions: 1
-        }
-        setTimeout(() => {
-            anti[channel.guild.id + entry.id].actions = "0"
-        }, config[channel.guild.id].time * 1000)
-    } else {
-        anti[channel.guild.id + entry.id].actions = Math.floor(anti[channel.guild.id + entry.id].actions + 1)
-        console.log("TETS");
-        setTimeout(() => {
-            anti[channel.guild.id + entry.id].actions = "0"
-        }, config[channel.guild.id].time * 1000)
-        if (anti[channel.guild.id + entry.id].actions >= config[channel.guild.id].roleDelLimit) {
-            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**→ | ${entry.username} , Deleted many __Roles__!**`))
-            anti[channel.guild.id + entry.id].actions = "0"
-            fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-                if (e) throw e;
-            });
-            fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-                if (e) throw e;
-            });
-        }
-    }
-
-    fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-        if (e) throw e;
-    });
-    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-        if (e) throw e;
-    });
-});
-
-client.on("roleCreate", async channel => {
-    const entry1 = await channel.guild.fetchAuditLogs({
-        type: 'ROLE_CREATE'
-    }).then(audit => audit.entries.first())
-    console.log(entry1.executor.username)
-    const entry = entry1.executor
-    if (!config[channel.guild.id]) config[channel.guild.id] = {
-        banLimit: 3,
-        chaDelLimit: 3,
-        roleDelLimit: 3,
-        kickLimits: 3,
-        roleCrLimits: 3
-    }
-    if (!anti[channel.guild.id + entry.id]) {
-        anti[channel.guild.id + entry.id] = {
-            actions: 1
-        }
-        setTimeout(() => {
-            anti[channel.guild.id + entry.id].actions = "0"
-        }, config[channel.guild.id].time * 1000)
-    } else {
-        anti[channel.guild.id + entry.id].actions = Math.floor(anti[channel.guild.id + entry.id].actions + 1)
-        console.log("TETS");
-        setTimeout(() => {
-            anti[channel.guild.id + entry.id].actions = "0"
-        }, config[channel.guild.id].time * 1000)
-        if (anti[channel.guild.id + entry.id].actions >= config[channel.guild.id].roleCrLimits) {
-            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**→ | ${entry.username} , is creating many __Rooms__.**`))
-            anti[channel.guild.id + entry.id].actions = "0"
-            fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-                if (e) throw e;
-            });
-            fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-                if (e) throw e;
-            });
-        }
-    }
-
-    fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-        if (e) throw e;
-    });
-    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-        if (e) throw e;
-    });
-});
-
-let antibots = JSON.parse(fs.readFileSync('./antibots.json' , 'utf8'));//require antihack.json file
-client.on('message', message => {
-    if(message.content.startsWith(prefix + "antibots on")) {
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-        if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('**Sorry But You Dont Have Permission** `ADMINISTRATOR`' );
-antibots[message.guild.id] = {
-onoff: 'On',
-}
-message.channel.send(`**✅ The AntiBots Is __𝐎𝐍__ !**`)
-          fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            });
-          }
- 
-        })
- 
- 
- 
-client.on('message', message => {
-    if(message.content.startsWith(prefix + "antibots off")) {
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
-        if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('**Sorry But You Dont Have Permission** `ADMINISTRATOR`' );
-antibots[message.guild.id] = {
-onoff: 'Off',
-}
-message.channel.send(`**⛔ The AntiBots Is __𝐎𝐅𝐅__ !**`)
-          fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            });
-          }
- 
-        })
- 
-client.on("guildMemberAdd", member => {
-  if(!antibots[member.guild.id]) antibots[member.guild.id] = {
-onoff: 'Off'
-}
-  if(antibots[member.guild.id].onoff === 'Off') return;
-if(member.user.bot) return member.kick()
-})
- 
-fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
-if (err) console.error(err)
-.catch(err => {
-console.error(err);
-});
- 
-})
 
 //كود البان AbuAz
-client.on('message', message => {
-   
-  if (message.author.x5bz) return;
+client.on("message", message => {
+  if (message.author.codes) return;
   if (!message.content.startsWith(prefix)) return;
- 
+
   let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
- 
+
   let args = message.content.split(" ").slice(1);
- 
+
   if (command == "باند") {
-               if(!message.channel.guild) return message.reply('** This command only for servers**');
-         
-  if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**You Don't Have ` BAN_MEMBERS ` Permission**");
-  if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
-  let user = message.mentions.users.first();
-  let reason = message.content.split(" ").slice(2).join(" ");
-  if (message.mentions.users.size < 1) return message.channel.send(`https://cdn.pg.sa/fjxlms81nk.png`);
-  if(!reason) return message.channel.send(`https://cdn.pg.sa/fjxlms81nk.png`);
-  if (!message.guild.member(user)
-  .bannable) return message.reply(`This User Is Have High Role !`);
- 
-  message.guild.member(user).ban(7, user);
- 
-  const banembed = new Discord.RichEmbed()
-  .setAuthor(`BANNED!`, user.displayAvatarURL)
-  .setColor("RANDOM")
-  .setTimestamp()
-  .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
-  .addField("**By:**", '**[ ' + `${message.author.tag}` + ' ]**')
-  .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
-  message.channel.send({
-    embed : banembed
-  })
-}
+    if (!message.channel.guild)
+      return message.reply("** This command only for servers**");
+
+    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
+      return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
+    if (!message.guild.member(client.user).hasPermission("BAN_MEMBERS"))
+      return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
+    let user = message.mentions.users.first();
+
+    if (message.mentions.users.size < 1) return message.reply("**منشن الشخص**");
+    if (!message.guild.member(user).bannable)
+      return message.reply(
+        "**يجب ان تكون رتبة البوت اعلي من رتبه الشخص المراد تبنيدة**"
+      );
+
+    message.guild.member(user).ban(7, user);
+
+    message.channel.send(
+      `**:white_check_mark: ${user.tag} banned from the server ! :airplane: **  `
+    );
+  }
 });
 
 
-//كود الكيك AbuAz 
- client.on('message', message => {
-      if (message.author.kick) return;
-      if (!message.content.startsWith(prefix)) return;
-     
-      let command = message.content.split(" ")[0];
-      command = command.slice(prefix.length);
-     
-      let args = message.content.split(" ").slice(1);
-     
-      if (command == "طرد") {
-                   if(!message.channel.guild) return;
-             
-      if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You Don't Have KICK_MEMBERS Permission").then(msg => msg.delete(5000));
-      if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("I Don't Have KICK_Members Permission");
-      let user = message.mentions.users.first();
-      let reason = message.content.split(" ").slice(2).join(" ");
-     
-      if (message.mentions.users.size < 1) return message.reply("منشن شخص");
-      if(!reason) return message.reply ("اكتب سبب الطرد");
-      if (!message.guild.member(user)
-      .bannable) return message.reply("لايمكنني طرد شخص اعلى من رتبتي");
-     
-      message.guild.member(user).kick(7, user);
-     
-      const banembed = new Discord.RichEmbed()
-      .setAuthor('Kicked !', user.displayAvatarURL)
-      .setColor("RANDOM")
-      .setTimestamp()
-      .addField("User:",  `[ + ${user.tag} + ]`)
-      .addField("By:", `[  + ${message.author.tag} +  ]`)
-      .addField("Reason:", `[ + ${reason} +  ]`)
-      client.channels.get("492583022982463500").send({embed : banembed})
-    }
-    });
 
-// كود مسح الشات مطور AbuAz 
+
+// AbuAz فتح وقفل الشات 
+client.on("message", message => {
+  var prefix = "!";
+  if (message.content === prefix + "قفل") {
+    if (!message.channel.guild)
+      return message.reply("** This command only for servers**");
+
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.reply(" **__ليس لديك صلاحيات__**");
+    message.channel
+      .overwritePermissions(message.guild.id, {
+        SEND_MESSAGES: false
+      })
+      .then(() => {
+        message.reply("**__تم قفل الشات__ ✅ **");
+      });
+  }
+
+  if (message.content === prefix + "فتح") {
+    if (!message.channel.guild)
+      return message.reply("** This command only for servers**");
+
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.reply("**__ليس لديك صلاحيات__**");
+    message.channel
+      .overwritePermissions(message.guild.id, {
+        SEND_MESSAGES: true
+      })
+      .then(() => {
+        message.reply("**__تم فتح الشات__✅**");
+      });
+  }
+});
+
+
 client.on("message", msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -514,37 +226,6 @@ client.on("message", msg => {
   }
 });
 
-// AbuAz فتح وقفل الشات 
-client.on('message', message => {
-
-    if(message.content === "قفل") {
-                        if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
-
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: false
-
-           }).then(() => {
-               message.reply("** ✖ |تم قفل الشات  **")
-           });
-             }
-
- if(message.content === "افتح") {
-                     if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
-
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: true
-
-           }).then(() => {
-               message.reply("**べ | تم فتح الشات **")
-           });
-             }
-             
-      
-    
-});
-
 //سحب العضو AbuAz 
 
 client.on('message', message => {
@@ -552,7 +233,7 @@ if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'سحب')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
  if (message.mentions.users.size === 0) {
- return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "move [USER]``")
+ return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "سحب @الشخص``")
 }
 if (message.member.voiceChannel != null) {
  if (message.mentions.members.first().voiceChannel != null) {
@@ -579,34 +260,6 @@ message.react("❌")
  }}});
 
 
-//معلومات رتبه AbuAz 
-
-
-client.on('message',async message => {
-  let args = message.content.split(" ").slice(1).join(" ");
-  let role = message.guild.roles.find('name',args) || message.guild.roles.get(args);
-
-
-  if(message.content.startsWith(prefix + "معلومات رتبة")) {
-    if(!args) return message.reply('اكتب اسم الرتبة');
-    if(!role) return message.reply('هذه الرتبة غير موجودة');
-    let iQp = new Discord.RichEmbed()
-    .setAuthor(message.author.tag,message.author.avatarURL)
-    .setTitle(message.guild.name)
-    .setThumbnail(message.guild.iconURL)
-    .addField('- اسم الرتبة',role.name,true)
-    .addField('- اي دي الرتبة',role.id,true)
-    .addField('- تم انشاء الرتبة',role.createdAt.toLocaleString(),true)
-    .addField('- لون الرتبة',role.hexColor,true)
-    .addField('- عدد الاعضاء الذي لديهم نفس الرتبة',role.members.size,true)
-    .addField('- مركز الرتبة بين كل الرتب',role.position - message.guild.roles.size,true)
-    .addField('- خصائص الرتبة',role.permissions,true)
-    .setFooter(message.author.tag,message.author.avatarURL);
-
-    message.channel.send(iQp);
-  }
-});
-
 //قائمه الباند AbuAz
 client.on('message',async message => {
      
@@ -619,37 +272,36 @@ if (message.content.toLowerCase().startsWith(prefix + 'قائمة الباند')
 
     ban = ban.array();
     let users = message.guild.fetchBans().id;
-    message.channel.send(`**${message.guild.name} Bans List :**`)
+    message.channel.send(`**${message.guild.name} المبندين :**`)
     ban.forEach(function(ban) {
          message.channel.send(`${ban} (${ban.id})`)
     })
 }
  });
- 
- //رتب AbuAz
- 
- client.on('message', message => {
-    if (message.content === "!صنع رتبه") {
-    if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
-            if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_ROLES`` **Premission**`);
 
-                     message.guild.createRole({ name: "Owner", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Co-Owner", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Leader", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Co-Leader", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "King", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Qween", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "HighNiss", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Pros", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "VIP+", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "VIP", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Actve", color: "#ffffff", permissions: [] })
-                     message.guild.createRole({ name: "Members", color: "#ffffff", permissions: [] })
-        
-
-message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعه الرتب **')
-}
+client.on("message", message => {
+  if (!message.channel.guild) return;
+  var prefix = "!";
+  if (message.content.startsWith(prefix + "البوتات")) {
+    if (message.author.bot) return;
+    let i = 1;
+    const botssize = message.guild.members
+      .filter(m => m.user.bot)
+      .map(m => `${i++} - <@${m.id}>`);
+    const embed = new Discord.RichEmbed()
+      .setAuthor(message.author.tag, message.author.avatarURL)
+      .setDescription(
+        `**يوجد ${
+          message.guild.members.filter(m => m.user.bot).size
+        } بوتات في هذا السيرفر**
+${botssize.join("\n")}`
+      )
+      .setFooter(client.user.username, client.user.avatarURL)
+      .setTimestamp();
+    message.channel.send(embed);
+  }
 });
+
 
 //كود رول AbuAz
 
@@ -657,7 +309,7 @@ client.on("message", message => {
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
 	if( !message.guild ) return;
-	if( !msg.startsWith( prefix + 'role' ) ) return;
+	if( !msg.startsWith( prefix + 'خذ' ) ) return;
 	if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
 	if( msg.toLowerCase().startsWith( prefix + 'roleremove' ) ){
 		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد سحب منه الرتبة**' );
@@ -668,7 +320,7 @@ client.on("message", message => {
 			message.mentions.members.first().removeRole( role1 );
 			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم سحب من **');
 		}
-		if( args[0].toLowerCase() == "all" ){
+		if( args[0].toLowerCase() == "الكل" ){
 			message.guild.members.forEach(m=>m.removeRole( role1 ))
 			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من الكل رتبة**');
 		} else if( args[0].toLowerCase() == "bots" ){
@@ -685,9 +337,9 @@ client.on("message", message => {
 		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
 		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );if( message.mentions.members.first() ){
 			message.mentions.members.first().addRole( role1 );
-			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم اعطاء **');
+			return message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء [ '+args[0]+' ] رتبة  **');
 		}
-		if( args[0].toLowerCase() == "all" ){
+		if( args[0].toLowerCase() == "الكل" ){
 			message.guild.members.forEach(m=>m.addRole( role1 ))
 			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الكل رتبة**');
 		} else if( args[0].toLowerCase() == "bots" ){
@@ -700,73 +352,100 @@ client.on("message", message => {
 	} 
 });
 
+
 //ميوت /فك ميوت AbuAz 
 
-client.on("message", message => {
-    if (message.author.bot) return;
-    
-    let command = message.content.split(" ")[0];
-    
-    if (command === "!اسكت") {
-          if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
+client.on("message", async message => {
+  if (message.author.boss) return;
+
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = message.content.split(" ").slice(1);
+  if (command == "اسكت") {
+    if (!message.channel.guild) return;
+    if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES"))
+      return message
+        .reply("انت لا تملك صلاحيات !! ")
+        .then(msg => msg.delete(5000));
+    if (!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES"))
+      return message
+        .reply("البوت لايملك صلاحيات ")
+        .then(msg => msg.delete(5000));
     let user = message.mentions.users.first();
-    let modlog = client.channels.find('name', 'log');
-    let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-    if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").catch(console.error);
-    if (message.mentions.users.size < 1) return message.reply('** يجب عليك منشنت شخص اولاً**').catch(console.error);
-    
-    const embed = new Discord.RichEmbed()
-      .setColor(0x00AE86)
-      .setTimestamp()
-      .addField('الأستعمال:', 'اسكت/تكلم')
-      .addField('تم ميوت:', `${user.username}#${user.discriminator} (${user.id})`)
-      .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
-     
-     if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
-   
-    if (message.guild.member(user).roles.has(muteRole.id)) {
-  return message.reply("**:white_check_mark: .. تم اعطاء العضو ميوت**").catch(console.error);
-  } else {
-      message.guild.member(user).addRole(muteRole).then(() => {
-  return message.reply("**:white_check_mark: .. تم اعطاء العضو ميوت كتابي**").catch(console.error);
-  });
-    }
-  
-  };
-  
-  });
-  client.on("message", message => {
-    if (message.author.bot) return;
-    
-    let command = message.content.split(" ")[0];
-    
-    if (command === "!تكلم") {
-          if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
-    let user = message.mentions.users.first();
-    let modlog = client.channels.find('name', 'mute-log');
-    let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-    if (!muteRole) return message.reply("** لا يوجد لديك رتبه الميوت 'Muted' **").catch(console.error);
-    if (message.mentions.users.size < 1) return message.reply('** يجب عليك منشنت شخص اولاً**').catch(console.error);
-    const embed = new Discord.RichEmbed()
-      .setColor(0x00AE86)
-      .setTimestamp()
-      .addField('الأستعمال:', 'اسكت/احكي')
-      .addField('تم فك الميوت عن:', `${user.username}#${user.discriminator} (${user.id})`)
-      .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
-  
-    if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
-  
-    if (message.guild.member(user).removeRole(muteRole.id)) {
-  return message.reply("**:white_check_mark: .. تم فك الميوت عن الشخص **").catch(console.error);
-  } else {
-      message.guild.member(user).removeRole(muteRole).then(() => {
-  return message.reply("**:white_check_mark: .. تم فك الميوت عن الشخص **").catch(console.error);
-  });
-    }
-  
-  };
-  
-  });
+    let muteRole = message.guild.roles.find("name", "Mute");
+    if (!muteRole)
+      return message.reply("** لا يوجد رتبة الميوت 'Mute' **").then(msg => {
+        msg.delete(5000);
+      });
+    if (message.mentions.users.size < 1)
+      return message.reply("** يجب عليك المنشن اولاً **").then(msg => {
+        msg.delete(5000);
+      });
+    let reason = message.content
+      .split(" ")
+      .slice(2)
+      .join(" ");
+    message.guild.member(user).addRole(muteRole);
+    const muteembed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setAuthor(`Muted!`, user.displayAvatarURL)
+      .setThumbnail(user.displayAvatarURL)
+      .addField(
+        "**:busts_in_silhouette:  المستخدم**",
+        "**[ " + `${user.tag}` + " ]**",
+        true
+      )
+      .addField(
+        "**:hammer:  تم بواسطة **",
+        "**[ " + `${message.author.tag}` + " ]**",
+        true
+      )
+      .addField("**:book:  السبب**", "**[ " + `${reason}` + " ]**", true)
+      .addField("User", user, true);
+    message.channel.send({ embed: muteembed });
+    var muteembeddm = new Discord.RichEmbed()
+      .setAuthor(`Muted!`, user.displayAvatarURL)
+      .setDescription(
+        `      
+${user} انت معاقب بميوت كتابي بسبب مخالفة القوانين
+${message.author.tag} تمت معاقبتك بواسطة
+[ ${reason} ] : السبب
+اذا كانت العقوبة عن طريق الخطأ تكلم مع المسؤلين
+`
+      )
+      .setFooter(`في سيرفر : ${message.guild.name}`)
+      .setColor("RANDOM");
+    user.send(muteembeddm);
+  }
+  if (command === "تكلم") {
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.channel
+        .sendMessage("**ليس لديك صلاحية لفك عن الشخص ميوت**:x: ")
+        .then(m => m.delete(5000));
+    if (!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES"))
+      return message.reply("**ما عندي برمشن**").then(msg => msg.delete(6000));
+
+    let toMute =
+      message.guild.member(message.mentions.users.first()) ||
+      message.guild.members.get(args[0]);
+    if (!toMute)
+      return message.channel.sendMessage("** يجب عليك المنشن اولاً **");
+    let role = message.guild.roles.find(r => r.name === "Mute");
+
+    if (!role || !toMute.roles.has(role.id))
+      return message.channel.sendMessage("**لم يتم اعطاءه ميوت  **:x:");
+
+    await toMute.removeRole(role);
+    message.channel.sendMessage(
+      "**لقد تم فك الميوت عن الشخص بنجاح**:white_check_mark:"
+    );
+
+    return;
+  }
+});
+
+
 //يوزر AbuAz
 client.on("message", msg => {
     var prefix = '!'//البركفس
@@ -774,19 +453,19 @@ client.on("message", msg => {
       let embed = new Discord.RichEmbed()
       .setThumbnail(msg.guild.iconURL)
       .setColor("RANDOM")
-      .addField("Year📆",msg.guild.createdAt.getFullYear())
-      .addField("Hour📆", msg.guild.createdAt.getHours())
-      .addField("Day📆", msg.guild.createdAt.getDay())
-      .addField("Month📆", msg.guild.createdAt.getMonth())
-      .addField("Minutes📆", msg.guild.createdAt.getMinutes())
-      .addField("Seconds📆", msg.guild.createdAt.getSeconds())
-      .addField("Full📆", msg.guild.createdAt.toLocaleString())
+      .addField("سنة📆",msg.guild.createdAt.getFullYear())
+      .addField("الساعه📆", msg.guild.createdAt.getHours())
+      .addField("اليوم📆", msg.guild.createdAt.getDay())
+      .addField("الشهر📆", msg.guild.createdAt.getMonth())
+      .addField("الدقائق📆", msg.guild.createdAt.getMinutes())
+      .addField("الثواني📆", msg.guild.createdAt.getSeconds())
+      .addField("التاريخ📆", msg.guild.createdAt.toLocaleString())
       .setTimestamp()
       msg.channel.send(embed);
     }
   });
-  
-  //سيرفر AbuAz 
+
+//سيرفر AbuAz 
   client.on("message", function(msg) {
   if (msg.content.startsWith("!سيرفر")) {
     if (!msg.channel.guild)
@@ -845,6 +524,7 @@ client.on("message", msg => {
   }
 });
 
+
 //بوت AbuAz 
 
 client.on('message', message => {
@@ -870,7 +550,9 @@ var ApL = `${Math.round(client.ping)}`
  })
   }  
  });
- 
+
+
+
  //رابط AbuAz 
  
  const shorten = require('isgd');
@@ -890,6 +572,7 @@ client.on('message', message => {
 })
 }}
 });
+
 
 //معلومات الانفايت AbuAz 
 
@@ -930,6 +613,7 @@ if(message.content.startsWith( prefix + 'دعواتي')) { //// وهون الا�
     };
 });
 
+
 //حاله الاعضاء AbuAz 
 client.on("message", message => {
   if (message.content == "!الاعضاء") {
@@ -937,21 +621,27 @@ client.on("message", message => {
 :green_heart: اونلاين   ${
       message.guild.members.filter(m => m.presence.status == "online").size
     }
+
 :heart:مشغول       ${
       message.guild.members.filter(m => m.presence.status == "dnd").size
     }
+
 :yellow_heart: خامل      ${
       message.guild.members.filter(m => m.presence.status == "idle").size
     }   
+
 :black_heart: اوفلاين   ${
       message.guild.members.filter(m => m.presence.status == "offline").size
     } 
+
 :blue_heart:   الكل  ${message.guild.memberCount}**`);
     message.channel.send({ embed });
   }
+
 });
-  
-  //id AbuAz 
+
+
+//id AbuAz 
   
   client.on("message", msg => {
     var prefix = "!";
@@ -972,13 +662,103 @@ embed.addField(":cloud_tornado:  الاسم", `**[ ${msg.author.username}#${msg.
 msg.channel.send({embed: embed})
 }
 });
- 
-
- 
- 
 
 
-    
+
+client.on("message", message => {
+  if (message.author.x5bz) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "طرد") {
+    if (!message.channel.guild)
+      return message.reply("** This command only for servers**");
+
+    if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+      return message.reply("**You Don't Have ` KICK_MEMBERS ` Permission**");
+    if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS"))
+      return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
+    let user = message.mentions.users.first();
+    let reason = message.content
+      .split(" ")
+      .slice(2)
+      .join(" ");
+    if (message.mentions.users.size < 1) return message.reply("**منشن الشخص**");
+    if (!reason) return message.reply("**اكتب سبب الطرد**");
+    if (!message.guild.member(user).kickable)
+      return message.reply(
+        "**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**"
+      );
+
+    message.guild.member(user).kick();
+
+    const kickembed = new Discord.RichEmbed()
+      .setAuthor(`تم طرد!`, user.displayAvatarURL)
+      .setColor("RANDOM")
+      .setTimestamp()
+      .addField("**اسم المطرود:**", "**[ " + `${user.tag}` + " ]**")
+      .addField("**من طرف:**", "**[ " + `${message.author.tag}` + " ]**")
+      .addField("**السبب:**", "**[ " + `${reason}` + " ]**");
+    message.channel.send({
+      embed: kickembed
+    });
+  }
+});
 
 
-client.login('NzQ5NDc3NjMyNzMwNTk1MzQw.X0sjcA.WVgR7QdAMUqCxvK-pqf4NB02nv0')//توكن بوتك
+//// كود افتار عن طريق المنشن
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "صورتي")) {
+    var mentionned = message.mentions.users.first();
+    var x5bzm;
+    if (mentionned) {
+      var x5bzm = mentionned;
+    } else {
+      var x5bzm = message.author;
+    }
+    const embed = new Discord.RichEmbed()
+
+      .setImage("")
+      .setTitle(`✽ **By Yaser Box**`)
+      .setColor("black")
+      .setImage(`${x5bzm.avatarURL}`);
+    message.channel.sendEmbed(embed);
+  }
+});
+
+
+
+
+
+client.on("message", message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "قول") {
+    if (!message.member.hasPermission("ADMINISTRATOR"))
+      return message.channel.send(
+        "**ADMINISTRATOR ليس لديك صلاحيات :rolling_eyes:**"
+      );
+
+    message.channel.send("" + args.join(" "));
+    message.delete();
+  }
+});
+
+
+
+
+
+
+
+
+client.login('NzMyMzI5NTM5NTE0MTM4NzE1.XwzBCA.VZzg7sAIeB-0LG268t_UgCYkf2c')//توكن بوتك
