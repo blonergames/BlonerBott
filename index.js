@@ -761,4 +761,4 @@ client.on("message", message => {
 
 
 
-client.login('NzMyMzI5NTM5NTE0MTM4NzE1.XwzBCA.VZzg7sAIeB-0LG268t_UgCYkf2c')//توكن بوتك
+client.login('')//توكن بوتك
