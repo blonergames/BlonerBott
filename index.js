@@ -80,9 +80,7 @@ client.on('message', message => {
  .addField("✽- **!فتح ↠  『 فتح الشات 』**",' ‎ ')
  .addField("✽- **!قفل ↠  『 قفل الشات 』**",' ‎ ')
  .addField("✽- **!سحب @الشخص ↠  『 لسحب شخص الى روم صوتي 』**",' ‎ ')	  
- .addField("✽- **!معلومات رتبة ↠  『 يوريك معلومات رتبه محدده 』**",' ‎ ')
  .addField("✽- **!قائمة الباند ↠  『  يوريك كل الي مبندين بسيرفر  』**",' ‎ ')	  
- .addField("✽- **!صنع رتبه ↠  『 يصنع لك رتب  』**",' ‎ ')
  .addField("✽- **!خذ @الشخص (اسم الرتبه) ↠  『 بعطي رتبه لشخص معين 』**",' ‎ ')
  .addField("✽- **!خذ الكل (اسم الرتبه)  ↠  『 يعطي رتبه لكل الاشخاص 』**",' ‎ ')
  .addField("✽- **!اسكت ↠  『 لاعطاء ميوت لشخص 』**",' ‎ ')
@@ -126,7 +124,7 @@ client.on('message', message => {
     }
 });
 
-//كود البان AbuAz
+//كود الباند AbuAz
 client.on("message", message => {
   if (message.author.codes) return;
   if (!message.content.startsWith(prefix)) return;
@@ -197,7 +195,7 @@ client.on("message", message => {
   }
 });
 
-
+////كووود مسح
 client.on("message", msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -761,4 +759,4 @@ client.on("message", message => {
 
 
 
-client.login('')//توكن بوتك
+client.login('NzQ5ODczMjk4NjczNzYyMzE0.X0yT7g.Kan6IrRmN9TAORIUMnJv7L6S_xs')//توكن بوتك
